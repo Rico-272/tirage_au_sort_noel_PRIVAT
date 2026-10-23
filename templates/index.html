@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pen</title>
   </head>
@@ -16,13 +16,13 @@
       <p id="loginText"> Login </p>
 
 
-    <form class="mon-formulaire">
+    <form action="https://tirageausortnoel.onrender.com/login" class="mon-formulaire" id="formulaireLogin">
 
       <h2> Connectez-vous </h2>
       
       <div class="champ-groupe">
         <label for="nom">            </label>
-        <input type="text" id="nom" name="nom" placeholder="username" required>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
       </div>
 
       <div class="champ-groupe">
@@ -44,5 +44,7 @@
     <a id="bug"> Un bug ? </a>
     <a id="adminPanelOpen" > Admin </a>
   </footer>
-  <script src="./static/script.js"></script>
+  
+  <script src="./script.js"></script>
+  
 </html>
