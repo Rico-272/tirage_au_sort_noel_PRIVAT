@@ -1,4 +1,4 @@
-console.log("Start of Website")
+// console.log("Start of Website")
 
 
 
@@ -30,3 +30,31 @@ adminClose.addEventListener('click', function() {
     loginStart.style.display = 'block';
 });
 
+const formulaire = document.getElementById('formulaireLogin');
+
+  formulaire.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    
+    const formData = new FormData(formulaire);
+
+    try {
+      const reponse = await fetch('https://tirageausortnoel.onrender.com/login', {
+        method: 'POST',
+        body: formData 
+      });
+
+      
+      const donneesRenvoyees = await reponse.json();
+
+      
+      console.log("Données reçues du serveur :", donneesRenvoyees);
+
+      
+      document.getElementById('reponseServeur').textContent = `Serveur dit : ${JSON.stringify(donneesRenvoyees)}`;
+
+    } catch (erreur) {
+      console.error("Erreur lors de la communication avec le serveur :", erreur);
+      document.getElementById('reponseServeur').textContent = "Impossible de joindre le serveur.";
+    }
+  });
