@@ -52,7 +52,7 @@ def lire_sur_github():
     }
     reponse = requests.get(API_URL, headers=headers)
 
-return reponse 
+    return reponse 
 
 
 def VerificationLogin(nom, mot_de_passe):
