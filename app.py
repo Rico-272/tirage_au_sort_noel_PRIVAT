@@ -71,9 +71,15 @@ def TirageAuSort():
     lignes = contenu_variable.splitlines()
 
     
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
 @app.route('/')
 def home():
-    return "Hello, World! Le site fonctionne."
+    # Flask va automatiquement chercher dans le dossier 'templates'
+    return render_template('index.html') 
+
 
     
 @app.route('/login', methods=['POST'])
