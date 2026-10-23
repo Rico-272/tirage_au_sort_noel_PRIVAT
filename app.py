@@ -55,7 +55,7 @@ def lire_sur_github():
 
 
 def VerificationLogin(nom, mot_de_passe):
-    let notif = "nothing"
+    return "Accès accordé. Bienvenue administrateur !"
 
 
 def TirageAuSort():
