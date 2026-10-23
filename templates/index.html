@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body id="body">
 
+    <div id="loginStart" > 
+      <p id="loginStartText" > Login </p>
+    </div>
+    
+    <div id="login" style="display: none;"> 
+      <p id="loginText"> Login </p>
+
+
+    <form class="mon-formulaire">
+
+      <h2> Connectez-vous </h2>
+      
+      <div class="champ-groupe">
+        <label for="nom">            </label>
+        <input type="text" id="nom" name="nom" placeholder="username" required>
+      </div>
+
+      <div class="champ-groupe">
+        <label for="password">        </label>
+        <input type="password" id="paswword" name="password" placeholder="Mot de passe" required>
+      </div>
+
+      <button type="submit">Se connecter </button>
+    </form>  
+      
+    </div>   
+
+    <div id="adminPanel" style="display: none;" >
+      <span id="adminCross">&#10060;</span>
+    </div>
+  </body>
+  <footer>
+    <div id="Rfooter"></div>
+    <a id="bug"> Un bug ? </a>
+    <a id="adminPanelOpen" > Admin </a>
+  </footer>
+  <script src="./script.js"></script>
+</html>
