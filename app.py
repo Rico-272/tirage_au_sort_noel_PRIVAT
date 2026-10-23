@@ -7,10 +7,11 @@ import base64
 app = Flask(__name__)
 CORS(app)
 
-# Configuration de GitHub (Récupérée via les variables d'environnement)
 GITHUB_TOKEN = os.environ.get("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")
 GITHUB_REPO = os.environ.get("Rico-272/tirage_au_sort_noel_PRIVAT")      
 GITHUB_FILENAME = "sauvgardeTirageNoel.txt"                # Le nom du fichier dans le repo
+
+userListe = ["marie-anne", "aurelie", "gregory", "jean-pierre", "marie", "pascal", "remi"]
 
 API_URL = f"https://github.com{GITHUB_REPO}/contents/{GITHUB_FILENAME}"
 
@@ -49,13 +50,18 @@ def lire_sur_github():
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json"
     }
-
-    
     reponse = requests.get(API_URL, headers=headers)
+
+return reponse 
 
 
 def VerificationLogin(nom, mot_de_passe):
-    return "Accès accordé. Bienvenue administrateur !"
+    if nom in userListe : 
+        numeroUtilisateur = userListe.index(nom)
+        
+        
+    else :
+        return "error 4610"
 
 
 def TirageAuSort():
