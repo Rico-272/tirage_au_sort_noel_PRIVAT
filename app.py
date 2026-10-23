@@ -71,8 +71,10 @@ def TirageAuSort():
     lignes = contenu_variable.splitlines()
 
     
+@app.route('/')
+def home():
+    return "Hello, World! Le site fonctionne."
 
-    
     
 @app.route('/login', methods=['POST'])
 def login():
