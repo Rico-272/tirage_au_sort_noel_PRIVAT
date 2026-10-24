@@ -121,10 +121,11 @@ def admin():
         return Response("Erreur", status=400, mimetype='text/plain')
 
 
-@app.route('/idee', methode=['POST'])
+@app.route('/idee', methods=['POST'])
 def idee():
-    idee = request.get_json()
-
+    donnees = request.get_json()
+    if not donnees:
+        return Response("Erreur", status=400, mimetype='text/plain')
     
 
 if __name__ == '__main__':
