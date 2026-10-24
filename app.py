@@ -52,12 +52,22 @@ def lire_sur_github():
     }
     reponse = requests.get(API_URL, headers=headers)
 
-    return reponse 
+    if reponse.status_code == 200:
+        donnees_fichier = reponse.json()
+        sha = donnees_fichier["sha"]
+        contenu_actuel = base64.b64decode(donnees_fichier["content"]).decode("utf-8")
+    else:
+        sha = None
+        contenu_actuel = ""
+
+    return contenu_actuel
 
 
 def VerificationLogin(nom, mot_de_passe):
     if nom in userListe : 
         numeroUtilisateur = userListe.index(nom)
+        sauvgardePassword = lire_sur_github()
+        
         
         
     else :
@@ -96,14 +106,24 @@ def login():
     nom_utilisateur = donnees.get('username')
     mot_de_passe = donnees.get('password')
 
-    resultat_texte = VerificationLogin(nom_utilisateur, mot_de_passe)
-    return Response(resultat_texte, mimetype='text/plain')
+#    resultat_texte = VerificationLogin(nom_utilisateur, mot_de_passe)
+#    return Response(resultat_texte, mimetype='text/plain')
+
+    test = lire_sur_github()
+    return test
+
+
 
 @app.route('/admin', methods=['POST'])
 def admin():
     donnees = request.get_json()
     if not donnees:
         return Response("Erreur", status=400, mimetype='text/plain')
+
+
+@app.route('/idee', methode=['POST'])
+def idee():
+    idee = request.get_json()
 
     
 
