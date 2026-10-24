@@ -30,6 +30,19 @@ adminClose.addEventListener('click', function() {
     loginStart.style.display = 'block';
 });
 
+let donneesRenvoyees = 0;
+
+        const affichage = document.querySelector('#valeur-variable');
+
+        
+        function mettreAJour() {
+            
+            affichage.textContent = donneesRenvoyees; 
+        }
+
+        
+        setInterval(mettreAJour, 1000);
+
 const formulaire = document.getElementById('formulaireLogin');
 
   formulaire.addEventListener('submit', async function(event) {
@@ -58,3 +71,4 @@ const formulaire = document.getElementById('formulaireLogin');
       document.getElementById('reponseServeur').textContent = "Impossible de joindre le serveur.";
     }
   });
+
