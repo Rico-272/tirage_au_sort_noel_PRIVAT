@@ -9,7 +9,7 @@ CORS(app)
 
 GITHUB_TOKEN = os.environ.get("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")
 GITHUB_REPO = os.environ.get("Rico-272/tirage_au_sort_noel_PRIVAT")      
-GITHUB_FILENAME = "sauvgardeTirageNoel.txt"                # Le nom du fichier dans le repo
+GITHUB_FILENAME = "sauvgardeTirageNoel.txt"                
 
 userListe = ["marie-anne", "aurelie", "gregory", "jean-pierre", "marie", "pascal", "remi"]
 
@@ -21,7 +21,6 @@ def sauvegarder_sur_github(nouveau_texte):
         "Accept": "application/vnd.github.v3+json"
     }
 
-    # 1. Récupérer le fichier actuel pour obtenir son contenu et son identifiant unique ("sha")
     reponse = requests.get(API_URL, headers=headers)
     
     if reponse.status_code == 200:
